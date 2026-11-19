@@ -1,0 +1,16 @@
+# Herramientas del sistema / Binarios
+Microsoft VS Code/
+*.exe
+*.dll
+
+# Archivos temporales de Office
+~$*
+
+# Sistema operativo
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# IDE / Editores
+.vscode/
+.idea/
