@@ -1,0 +1,45 @@
+/* ==========================================================================
+   ALKAN DESIGN TOKENS & CSS VARIABLES (PREPARACIÓN REACT / ANGULAR)
+   Taller Industrial Alkan S.A.S. — Sistema Visual Oficial
+   ========================================================================== */
+
+:root {
+  /* Surface & Base Tokens */
+  --alkan-base: #0B111A;             /* Profundidad carbón/acero oscura */
+  --alkan-surface: #101924;          /* Elevación 1: Header, navbars, módulos */
+  --alkan-card: #142130;             /* Elevación 2: Tarjetas, inputs, paneles */
+  --alkan-border: #1E2D40;           /* Borde estructural de precisión */
+  --alkan-border-light: #2A3E56;     /* Borde activo / hover */
+
+  /* Primary Brand Buttons & Action */
+  --alkan-btn-green: #235832;        /* Verde bosque corporativo oficial del logo */
+  --alkan-btn-green-hover: #2E6F40;  /* Verde bosque estado hover */
+
+  /* Technical Accents (Contrast Ratio > 4.5:1) */
+  --alkan-green-accent: #3A834E;     /* Verde técnico de acento */
+  --alkan-green-hover: #48A15F;      /* Verde interactivo para links y focos */
+
+  /* Typography Colors */
+  --alkan-text-primary: #FFFFFF;     /* Titulares principales H1, H2, H3 */
+  --alkan-text-steel: #CBD5E1;       /* Cuerpo técnico (Slate-300) */
+  --alkan-text-muted: #94A3B8;       /* Metadatos, etiquetas secundarias */
+
+  /* Typography Families */
+  --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-technical: 'Inter', ui-monospace, monospace;
+}
+
+/* Custom Scrollbar for Textareas and Panels */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--alkan-surface);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--alkan-border);
+  border-radius: 3px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--alkan-green-accent);
+}

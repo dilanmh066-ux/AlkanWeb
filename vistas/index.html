@@ -1,0 +1,320 @@
+﻿<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taller Industrial Alkan S.A.S. | Precisión Metalmecánica y Soluciones Industriales</title>
+  <meta name="description" content="Más de 50 años liderando la fabricación de repuestos industriales, corte CNC y mantenimiento mecánico certificado en Guadalajara de Buga, Colombia.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+            technical: ['Inter', 'monospace', 'sans-serif']
+          },
+          colors: {
+            brand: {
+              base: '#0B111A',        // Canvas ultra-oscuro oficial
+              surface: '#101924',     // Superficie elevada
+              card: '#142130',        // Tarjetas y paneles
+              border: '#1E2D40',      // Bordes limpios de 1px
+              borderLight: '#2A3C52', // Bordes interactivos
+              green: '#3A834E',       // Verde corporativo elegante (NO neón)
+              greenHover: '#48A15F',  // Acento legible sobre oscuro
+              btnGreen: '#235832',    // Botón primario sólido
+              btnGreenHover: '#2E6F40',
+              textMain: '#FFFFFF',
+              textSteel: '#CBD5E1',   // Lectura principal de cuerpo
+              textMuted: '#94A3B8'    // Texto secundario
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0B111A;
+      color: #CBD5E1;
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection {
+      background-color: #235832;
+      color: #FFFFFF;
+    }
+    h1 { font-size: 3.5rem; line-height: 1.12; }
+    h2 { font-size: 2.25rem; line-height: 1.2; }
+    h3 { font-size: 1.25rem; line-height: 1.3; }
+    p, body { font-size: 1rem; }
+  </style>
+</head>
+<body class="bg-brand-base min-h-screen text-brand-textSteel font-sans selection:bg-brand-btnGreen selection:text-white">
+
+  <!-- ========================================================= -->
+  <!-- 0. TOP STRIP INFORMATIVO                                  -->
+  <!-- ========================================================= -->
+  <header class="border-b border-brand-border bg-[#070C12] text-xs py-2 px-6 lg:px-16 flex flex-wrap justify-between items-center gap-3">
+    <div class="flex items-center gap-4 text-brand-textMuted">
+      <span class="flex items-center gap-1.5">
+        <svg class="w-3.5 h-3.5 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+        <span>Planta: <strong>Cra 24 N° 13 – 04 Barrio Palo Blanco, Buga (Valle)</strong></span>
+      </span>
+      <span class="hidden md:inline text-brand-border">|</span>
+      <span class="hidden md:flex items-center gap-1.5">
+        <svg class="w-3.5 h-3.5 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+        <span>alcam_uno@yahoo.com</span>
+      </span>
+    </div>
+    <div class="flex items-center gap-2 font-technical">
+      <span class="text-brand-textMuted">No. de celular:</span>
+      <a href="tel:3104646032" class="text-white hover:text-brand-greenHover transition-colors font-semibold">310 464 6032</a>
+    </div>
+  </header>
+
+  <!-- ========================================================= -->
+  <!-- 1. NAVBAR CORPORATIVO                                     -->
+  <!-- ========================================================= -->
+  <nav class="sticky top-0 z-50 bg-brand-base/95 backdrop-blur-md border-b border-brand-border px-6 lg:px-16 py-3.5">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-6">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="RecursosVisuales/logo_alkan_exact_0b111a.png" alt="Taller Industrial Alkan S.A.S." class="h-12 w-auto object-contain transition-transform group-hover:scale-[1.02]">
+      </a>
+
+      <!-- Navigation Links con Menú Desplegable Centrado -->
+      <div class="hidden lg:flex items-center justify-center gap-10 text-sm font-medium">
+        <a href="index.html" class="text-white font-semibold relative py-1">
+          Inicio
+          <span class="absolute bottom-0 left-0 w-full h-[2px] bg-brand-green rounded-full"></span>
+        </a>
+        <a href="nosotros.html" class="text-brand-textMuted hover:text-white transition-colors">Nosotros</a>
+        
+        <!-- DROPDOWN SERVICIOS -->
+        <div class="relative group py-2">
+          <a href="servicios.html" class="flex items-center gap-1.5 text-brand-textMuted hover:text-white transition-colors">
+            <span>Servicios</span>
+            <svg class="w-3.5 h-3.5 text-brand-green transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </a>
+          
+          <!-- Menú Flotante Elevado -->
+          <div class="absolute top-full left-0 mt-2 w-80 rounded-xl bg-brand-surface border border-brand-border shadow-2xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <a href="servicios.html?s=torno" class="flex items-start gap-3 p-3 rounded-lg hover:bg-brand-card transition-colors group/item">
+              <div class="w-8 h-8 rounded-md bg-brand-green/10 border border-brand-green/30 flex items-center justify-center text-brand-green shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              </div>
+              <div>
+                <span class="text-xs font-bold text-white group-hover/item:text-brand-greenHover block">Torno y Mecanizado</span>
+                <span class="text-[11px] text-brand-textMuted block">Ejes, bujes y volteo hasta Ø 1.000 mm</span>
+              </div>
+            </a>
+
+            <a href="servicios.html?s=fresado" class="flex items-start gap-3 p-3 rounded-lg hover:bg-brand-card transition-colors group/item">
+              <div class="w-8 h-8 rounded-md bg-brand-green/10 border border-brand-green/30 flex items-center justify-center text-brand-green shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+              </div>
+              <div>
+                <span class="text-xs font-bold text-white group-hover/item:text-brand-greenHover block">Fresado y Engranajes</span>
+                <span class="text-[11px] text-brand-textMuted block">Tallado de piñones rectos y helicoidales</span>
+              </div>
+            </a>
+
+            <a href="servicios.html?s=plasma" class="flex items-start gap-3 p-3 rounded-lg hover:bg-brand-card transition-colors group/item">
+              <div class="w-8 h-8 rounded-md bg-brand-green/10 border border-brand-green/30 flex items-center justify-center text-brand-green shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
+              </div>
+              <div>
+                <span class="text-xs font-bold text-white group-hover/item:text-brand-greenHover block">Corte Plasma CNC</span>
+                <span class="text-[11px] text-brand-textMuted block">Mesa CNC hasta 1 pulgada en lámina</span>
+              </div>
+            </a>
+
+            <a href="servicios.html?s=rolado" class="flex items-start gap-3 p-3 rounded-lg hover:bg-brand-card transition-colors group/item">
+              <div class="w-8 h-8 rounded-md bg-brand-green/10 border border-brand-green/30 flex items-center justify-center text-brand-green shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+              </div>
+              <div>
+                <span class="text-xs font-bold text-white group-hover/item:text-brand-greenHover block">Rolado y Cilindrado</span>
+                <span class="text-[11px] text-brand-textMuted block">Conformado de lámina hasta 1/2 pulgada</span>
+              </div>
+            </a>
+
+            <a href="servicios.html?s=soldadura" class="flex items-start gap-3 p-3 rounded-lg hover:bg-brand-card transition-colors group/item">
+              <div class="w-8 h-8 rounded-md bg-brand-green/10 border border-brand-green/30 flex items-center justify-center text-brand-green shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              </div>
+              <div>
+                <span class="text-xs font-bold text-white group-hover/item:text-brand-greenHover block">Soldadura Especializada</span>
+                <span class="text-[11px] text-brand-textMuted block">Procesos TIG, MIG y revestimientos duros</span>
+              </div>
+            </a>
+
+            <a href="servicios.html?s=mantenimiento" class="flex items-start gap-3 p-3 rounded-lg hover:bg-brand-card transition-colors group/item">
+              <div class="w-8 h-8 rounded-md bg-brand-green/10 border border-brand-green/30 flex items-center justify-center text-brand-green shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+              </div>
+              <div>
+                <span class="text-xs font-bold text-white group-hover/item:text-brand-greenHover block">Mantenimiento y Montaje</span>
+                <span class="text-[11px] text-brand-textMuted block">Cuadrillas certificadas SST y alturas</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/573104646032" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-md border border-brand-border bg-brand-surface hover:border-brand-green text-xs font-semibold text-white transition-all shadow-sm">
+          <svg class="w-4 h-4 text-brand-greenHover" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          <span>WhatsApp Planta</span>
+        </a>
+
+        <!-- Botón Menú Móvil Hamburguesa -->
+        <button id="mobileMenuBtn" aria-label="Abrir Menú de Navegación" class="lg:hidden p-2 rounded-md border border-brand-border bg-brand-surface text-brand-textMuted hover:text-white focus:outline-none">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Panel -->
+    <div id="mobileMenu" class="hidden lg:hidden pt-4 pb-4 border-t border-brand-border/60 mt-3.5 space-y-3">
+      <a href="index.html" class="block px-3 py-2 rounded-md text-sm font-semibold text-brand-greenHover bg-brand-surface border border-brand-green/20">Inicio</a>
+      <a href="nosotros.html" class="block px-3 py-2 rounded-md text-sm font-medium text-brand-textMuted hover:text-white">Nosotros (Historia & SST)</a>
+      <div class="pt-1">
+        <span class="block px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-greenHover">Servicios Técnicos</span>
+        <div class="mt-1 pl-3 space-y-1 border-l border-brand-border">
+          <a href="servicios.html?s=torno" class="block px-3 py-1.5 text-xs text-brand-textSteel hover:text-white">Torno y Mecanizado</a>
+          <a href="servicios.html?s=fresado" class="block px-3 py-1.5 text-xs text-brand-textSteel hover:text-white">Fresado y Engranajes</a>
+          <a href="servicios.html?s=plasma" class="block px-3 py-1.5 text-xs text-brand-textSteel hover:text-white">Corte Plasma CNC</a>
+          <a href="servicios.html?s=rolado" class="block px-3 py-1.5 text-xs text-brand-textSteel hover:text-white">Rolado y Cilindrado</a>
+          <a href="servicios.html?s=soldadura" class="block px-3 py-1.5 text-xs text-brand-textSteel hover:text-white">Soldadura Especializada</a>
+          <a href="servicios.html?s=mantenimiento" class="block px-3 py-1.5 text-xs text-brand-textSteel hover:text-white">Mantenimiento y Montaje</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========================================================= -->
+  <!-- 2. HERO PRINCIPAL (Foto de Torno Real Integrada)          -->
+  <!-- ========================================================= -->
+  <section class="relative pt-16 pb-20 px-6 lg:px-16 flex flex-col items-center justify-center text-center overflow-hidden">
+    <!-- Industrial Lathe Photo Background -->
+    <div class="absolute inset-0 bg-[#070D15]">
+      <img src="RecursosVisuales/hero_torno_bg.jpg" alt="Mecanizado en Torno Industrial Alkan" class="w-full h-full object-cover object-[75%_center] md:object-[65%_center] opacity-60 filter contrast-105 brightness-95">
+      <!-- Gradient Overlays for maximum text contrast and seamless bottom blend -->
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-base via-brand-base/50 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-base/90 via-brand-base/50 to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12] mb-6">
+        Precisión Metalmecánica y<br>
+        <span class="text-brand-greenHover">Soluciones para la Industria</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-base sm:text-lg text-brand-textSteel leading-relaxed max-w-2xl mb-10">
+        Fabricación de repuestos especiales, corte CNC y mantenimiento mecánico con personal certificado en alturas y SST.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-4 mb-14">
+        <a href="servicios.html" class="inline-flex items-center gap-2 px-8 py-4 rounded-md bg-brand-btnGreen hover:bg-brand-btnGreenHover text-sm font-bold text-white transition-all shadow-lg shadow-brand-btnGreen/25">
+          <span>Consultar Servicios y Cotizar</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </a>
+        <a href="nosotros.html" class="inline-flex items-center gap-2 px-7 py-4 rounded-md border border-brand-border bg-brand-surface/85 hover:border-brand-green text-sm font-semibold text-white transition-all backdrop-blur-sm">
+          <span>Conocer Nuestra Empresa</span>
+        </a>
+      </div>
+
+      <!-- ========================================================= -->
+      <!-- 3. SECCIÓN NUESTROS CLIENTES (Logos adaptados a #0B111A) -->
+      <!-- ========================================================= -->
+      <div id="clientes" class="border-t border-brand-border/60 pt-10 w-full max-w-5xl mx-auto">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-textMuted block mb-6 text-center">Nuestros Clientes</span>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 items-center justify-center gap-4 sm:gap-6 px-2">
+          <!-- Grupo Nutresa -->
+          <div class="flex items-center justify-center h-20 px-5 rounded-lg bg-brand-surface/70 border border-brand-border/60 hover:border-brand-green/50 hover:bg-brand-surface transition-all duration-300 group backdrop-blur-sm">
+            <img src="RecursosVisuales/cliente_nutresa.png" alt="Grupo Nutresa" class="max-h-9 w-auto object-contain opacity-85 group-hover:opacity-100 transition-opacity">
+          </div>
+          <!-- Yara Colombia -->
+          <div class="flex items-center justify-center h-20 px-5 rounded-lg bg-brand-surface/70 border border-brand-border/60 hover:border-brand-green/50 hover:bg-brand-surface transition-all duration-300 group backdrop-blur-sm">
+            <img src="RecursosVisuales/cliente_yara.png" alt="Yara Colombia" class="max-h-12 w-auto object-contain opacity-85 group-hover:opacity-100 transition-opacity">
+          </div>
+          <!-- Solla -->
+          <div class="flex items-center justify-center h-20 px-5 rounded-lg bg-brand-surface/70 border border-brand-border/60 hover:border-brand-green/50 hover:bg-brand-surface transition-all duration-300 group backdrop-blur-sm">
+            <img src="RecursosVisuales/cliente_solla.png" alt="Solla" class="max-h-9 w-auto object-contain opacity-85 group-hover:opacity-100 transition-opacity">
+          </div>
+          <!-- Finca S.A.S. -->
+          <div class="flex items-center justify-center h-20 px-5 rounded-lg bg-brand-surface/70 border border-brand-border/60 hover:border-brand-green/50 hover:bg-brand-surface transition-all duration-300 group backdrop-blur-sm">
+            <img src="RecursosVisuales/cliente_finca.png" alt="Finca S.A.S." class="max-h-12 w-auto object-contain opacity-85 group-hover:opacity-100 transition-opacity">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- 4. FOOTER CORPORATIVO                                     -->
+  <!-- ========================================================= -->
+  <footer class="bg-[#070B10] border-t border-brand-border py-14 px-6 lg:px-16 text-xs text-brand-textMuted">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-10 mb-12">
+      <!-- Columna 1: Marca y Contacto -->
+      <div class="max-w-md">
+        <a href="index.html" class="inline-block mb-5">
+          <img src="RecursosVisuales/logo_alkan_exact_0b111a.png" alt="Taller Industrial Alkan S.A.S." class="h-14 sm:h-16 w-auto object-contain transition-transform hover:scale-[1.02]">
+        </a>
+        <p class="text-xs text-brand-textSteel leading-relaxed mb-4">
+          Taller Industrial Alkan S.A.S. — Una gran familia al servicio del sector industrial colombiano desde 1974. Especialistas en precisión metalmecánica, mantenimiento y montajes de planta.
+        </p>
+        <div class="space-y-1 text-xs text-brand-textMuted">
+          <p><span class="text-white font-medium">Razón Social:</span> Taller Industrial Alkan S.A.S.</p>
+          <p><span class="text-white font-medium">NIT:</span> 900.865.214-1 · Régimen Ordinario</p>
+          <p><span class="text-white font-medium">Planta:</span> Cra 24 N° 13 – 04 B/ Palo Blanco, Buga</p>
+          <p><span class="text-white font-medium">No. de celular:</span> <a href="tel:3104646032" class="text-brand-greenHover hover:underline font-technical font-semibold">310 464 6032</a></p>
+          <p><span class="text-white font-medium">Correo institucional:</span> <a href="mailto:alcam_uno@yahoo.com" class="text-brand-greenHover hover:underline">alcam_uno@yahoo.com</a></p>
+        </div>
+      </div>
+
+      <!-- Columna 2: Navegación -->
+      <div class="space-y-2 min-w-[180px]">
+        <p class="text-white text-xs font-bold tracking-wider uppercase mb-3">Navegación</p>
+        <div><a href="index.html" class="text-brand-greenHover font-semibold">Inicio</a></div>
+        <div><a href="nosotros.html" class="hover:text-white transition-colors">Nosotros (Historia & SST)</a></div>
+        <div><a href="servicios.html" class="hover:text-white transition-colors">Servicios Técnicos</a></div>
+      </div>
+    </div>
+
+    <!-- Barra de Créditos & Ley 1581 -->
+    <div class="max-w-7xl mx-auto pt-8 border-t border-brand-border/60 flex flex-wrap justify-between items-center gap-4 text-[11px]">
+      <div>
+        © 2026 <strong>Taller Industrial Alkan S.A.S.</strong> NIT: 900.865.214-1. Todos los derechos reservados.
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="politica-datos.html" class="text-brand-greenHover hover:underline">Política de Tratamiento de Datos (Ley 1581)</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  </script>
+
+</body>
+</html>

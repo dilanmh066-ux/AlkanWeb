@@ -1,0 +1,82 @@
+{
+  "services": [
+    {
+      "id": "torno",
+      "category": "Mecanizado de Precisión",
+      "title": "Torno y Mecanizado Industrial",
+      "badge": "Mecanizado Pesado",
+      "description": [
+        "En Taller Industrial Alkan S.A.S. contamos con tornos paralelos industriales para mecanizado pesado y de precisión, con capacidad de volteo hasta Ø 1.000 mm sobre bancada y longitud entre puntos de hasta 3.000 mm.",
+        "Fabricamos y recuperamos componentes cilíndricos sometidos a alta fatiga mecánica y desgaste abrasivo, tales como ejes de transmisión de potencia, vástagos de cilindros hidráulicos, camisas, bocinas, poleas, rodillos y tambores para plantas industriales.",
+        "Garantizamos tolerancias estrictas de concentricidad y rugosidad en aceros al carbono (1045), aceros aleados para tratamiento térmico (4140), aceros inoxidables (304/316), bronces fosforados y polímeros técnicos."
+      ],
+      "formLabel": "¿Necesitas Cotizar Torno y Mecanizado?",
+      "waContext": "Hola, solicito cotización para Torno y Mecanizado"
+    },
+    {
+      "id": "fresado",
+      "category": "Mecanizado de Precisión",
+      "title": "Fresado Universal y Tallado de Engranajes",
+      "badge": "Transmisión de Potencia",
+      "description": [
+        "Disponemos de fresadoras universales y verticales equipadas con cabezales divisores para el tallado de dentados, ranurados milimétricos y mecanizado de piezas prismáticas de alta exigencia.",
+        "Fabricamos piñones rectos, engranajes helicoidales, coronas en bronce para reductores, piñones de cadena norma ANSI/DIN, acoples estriados y cremalleras según muestra física o plano técnico.",
+        "Nuestros procesos aseguran el módulo exacto, ángulo de presión y ajuste de engrane requerido para sustitución inmediata en paradas de planta."
+      ],
+      "formLabel": "¿Necesitas Cotizar Fresado y Engranajes?",
+      "waContext": "Hola, solicito cotización para Fresado y Engranajes"
+    },
+    {
+      "id": "plasma",
+      "category": "Corte y Conformado CNC",
+      "title": "Corte Plasma CNC de Alta Definición",
+      "badge": "Corte Computarizado",
+      "description": [
+        "Contamos con mesa de corte plasma CNC industrial con capacidad para procesar láminas y placas de acero al carbono e inoxidable desde calibres delgados hasta espesores de 1 pulgada (25.4 mm).",
+        "Área útil de corte de 1.500 x 3.000 mm, cortes limpios de alta repetibilidad dimensional y mínima zona afectada por el calor (ZAC), listos para ensamble directo o biselado de soldadura.",
+        "Corte de bridas según normas ANSI/ASME, cartelas estructurales, discos perforados, placas base para columnas y piezas con geometrías complejas a partir de archivos CAD (DXF, DWG) o muestra física."
+      ],
+      "formLabel": "¿Necesitas Cotizar Corte Plasma CNC?",
+      "waContext": "Hola, solicito cotización para Corte Plasma CNC"
+    },
+    {
+      "id": "rolado",
+      "category": "Calderería y Conformado",
+      "title": "Rolado y Cilindrado de Lámina Pesada",
+      "badge": "Calderería Pesada",
+      "description": [
+        "Roladora de lámina de tres rodillos piramidales con capacidad de conformado mecánico para curvar planchas metálicas en cilindros uniformes, conos concéntricos y virolas de ensamble.",
+        "Capacidad de rolado en frío para espesores de hasta 1/2 pulgada (12.7 mm) y ancho útil de conformado de hasta 2.000 mm en aceros estructurales A36 e inoxidables.",
+        "Indispensable para la fabricación de tanques de almacenamiento, ductos de transporte neumático, chimeneas y carcasas cilíndricas para la industria azucarera y papelera."
+      ],
+      "formLabel": "¿Necesitas Cotizar Rolado de Lámina?",
+      "waContext": "Hola, solicito cotización para Rolado de Lámina"
+    },
+    {
+      "id": "soldadura",
+      "category": "Unión y Recuperación",
+      "title": "Soldadura Especializada y Revestimientos",
+      "badge": "Homologación AWS",
+      "description": [
+        "Aplicación de procesos de soldadura SMAW (electrodo revestido), GMAW/MIG (microalambre) y GTAW/TIG (gas argón) ejecutados por soldadores calificados bajo estándares del código AWS D1.1.",
+        "Especialistas en recuperación y recargue duro antidesgaste en piezas sometidas a abrasión severa e impacto (dientes de cargador, cuchillas, martillos trituradores y tornillos sinfín transportadores).",
+        "Soldadura en aceros disímiles, fundiciones de hierro, bronces, aceros inoxidables austeníticos y aleaciones especiales con control térmico de precalentamiento y poscalentamiento."
+      ],
+      "formLabel": "¿Necesitas Cotizar Soldadura Especializada?",
+      "waContext": "Hola, solicito cotización para Soldadura Especializada"
+    },
+    {
+      "id": "mantenimiento",
+      "category": "Servicios en Sitio y SST",
+      "title": "Mantenimiento Industrial y Montaje en Planta",
+      "badge": "SST Resolución 4272",
+      "description": [
+        "Cuadrillas técnicas interdisciplinarias (mecánicos de banco, soldadores y montadores) con disponibilidad para atención de paradas de planta programadas y emergencias mecánicas las 24 horas.",
+        "Personal 100% certificado en trabajo seguro en alturas (Resolución 4272/2021), espacios confinados, protocolos de consignación y bloqueo LOTO y afiliación estricta a ARL.",
+        "Montaje y alineación de reductores, motores, poleas y chumaceras, cambio de bandas transportadoras, instalación de tubería de proceso y adecuaciones estructurales en planta cliente."
+      ],
+      "formLabel": "¿Necesitas Cotizar Mantenimiento y Montajes?",
+      "waContext": "Hola, solicito cotización para Mantenimiento y Montajes"
+    }
+  ]
+}

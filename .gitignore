@@ -14,3 +14,9 @@ Desktop.ini
 # IDE / Editores
 .vscode/
 .idea/
+
+# AI Agent & Tools
+.agent/
+.agents/
+.gemini/
+.impeccable/
