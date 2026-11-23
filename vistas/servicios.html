@@ -281,13 +281,26 @@
               ¿Necesitas Más Información o Cotizar este Servicio?
             </h2>
             <p class="text-xs text-brand-textMuted mt-1">
-              Diligencia estos 4 datos y un ingeniero te contactará en menos de 24h.
+              Diligencia tus datos corporativos y un ingeniero te contactará en menos de 24h.
             </p>
           </div>
 
-          <!-- Formulario Ágil de 4 Campos -->
+          <!-- Mensaje de Error Accesible (Oculto por defecto) -->
+          <div id="serviceError" role="alert" aria-live="polite" class="hidden mb-4 p-3.5 rounded-lg bg-red-950/40 border border-red-500/40 text-xs text-red-200 space-y-2">
+            <div class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-red-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+              <p id="errorMessage" class="leading-relaxed">Error al procesar la solicitud.</p>
+            </div>
+            <a id="errorWaLink" href="#" target="_blank" class="hidden inline-flex items-center gap-1.5 text-xs text-brand-greenHover hover:underline font-semibold pl-6">
+              <span>Enviar requerimiento por WhatsApp ahora &rarr;</span>
+            </a>
+          </div>
+
+          <!-- Formulario Ágil de 5 Campos (Con validación y Web3Forms) -->
           <form id="serviceForm" onsubmit="event.preventDefault(); handleServiceSubmit();" class="space-y-4">
-            
+            <!-- Anti-spam Honeypot (Oculto) -->
+            <input type="checkbox" name="botcheck" id="botcheck" class="hidden" style="display: none;">
+
             <!-- Campo 1: Nombres y Apellidos -->
             <div>
               <label for="fullName" class="text-xs font-semibold text-brand-textSteel block mb-1.5">
@@ -303,7 +316,22 @@
               >
             </div>
 
-            <!-- Campo 2: Teléfono / Celular -->
+            <!-- Campo 2: Empresa / Razón Social (NUEVO) -->
+            <div>
+              <label for="company" class="text-xs font-semibold text-brand-textSteel block mb-1.5">
+                Empresa / Razón Social <span class="text-brand-green">*</span>
+              </label>
+              <input 
+                type="text" 
+                id="company" 
+                name="company" 
+                required 
+                placeholder="Ej. Ingenio / Harinera / Fábrica..." 
+                class="w-full px-3.5 py-2.5 rounded-lg bg-brand-card border border-brand-border text-white placeholder-brand-textMuted text-xs focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all"
+              >
+            </div>
+
+            <!-- Campo 3: Teléfono / Celular -->
             <div>
               <label for="phone" class="text-xs font-semibold text-brand-textSteel block mb-1.5">
                 Teléfono / Celular <span class="text-brand-green">*</span>
@@ -318,7 +346,7 @@
               >
             </div>
 
-            <!-- Campo 3: Email Corporativo -->
+            <!-- Campo 4: Email Corporativo -->
             <div>
               <label for="email" class="text-xs font-semibold text-brand-textSteel block mb-1.5">
                 Correo Electrónico <span class="text-brand-green">*</span>
@@ -333,50 +361,62 @@
               >
             </div>
 
-            <!-- Campo 4: Mensaje / Requerimiento -->
+            <!-- Campo 5: Mensaje / Requerimiento -->
             <div>
               <label for="message" class="text-xs font-semibold text-brand-textSteel block mb-1.5">
-                Mensaje <span class="text-brand-green">*</span>
+                Requerimiento Técnico <span class="text-brand-green">*</span>
               </label>
               <textarea 
                 id="message" 
                 name="message" 
                 rows="4" 
                 required 
-                placeholder="Indica las dimensiones aproximadas, cantidad de piezas, material o si requieres visita técnica a tu planta..." 
+                placeholder="Indica dimensiones aproximadas, cantidad de piezas, material o si requieres visita técnica a tu planta..." 
                 class="w-full px-3.5 py-2.5 rounded-lg bg-brand-card border border-brand-border text-white placeholder-brand-textMuted text-xs focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all custom-scrollbar leading-relaxed"
               ></textarea>
             </div>
 
-            <!-- Habeas Data -->
+            <!-- Habeas Data (Ley 1581) -->
             <label class="flex items-start gap-2.5 cursor-pointer text-[11px] text-brand-textMuted pt-1">
               <input type="checkbox" id="consent" required class="mt-0.5 rounded bg-brand-card border-brand-border text-brand-btnGreen focus:ring-brand-green">
               <span>Autorizo el tratamiento de datos personales conforme a la <a href="politica-datos.html" target="_blank" class="text-brand-greenHover underline font-semibold">Política de Privacidad (Ley 1581)</a>.</span>
             </label>
 
-            <!-- Botón de Envío -->
+            <!-- Botón de Envío con Estado de Carga -->
             <button 
               type="submit" 
-              class="w-full py-3.5 px-6 rounded-lg bg-brand-btnGreen hover:bg-brand-btnGreenHover active:scale-[0.99] text-xs font-bold uppercase tracking-wider text-white transition-all shadow-md shadow-brand-btnGreen/25 flex items-center justify-center gap-2"
+              id="submitBtn"
+              class="w-full py-3.5 px-6 rounded-lg bg-brand-btnGreen hover:bg-brand-btnGreenHover disabled:opacity-60 disabled:cursor-not-allowed active:scale-[0.99] text-xs font-bold uppercase tracking-wider text-white transition-all shadow-md shadow-brand-btnGreen/25 flex items-center justify-center gap-2"
             >
-              <span>Contactarme</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              <svg id="submitSpinner" class="hidden animate-spin w-4 h-4 text-white shrink-0" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              <span id="submitBtnText">Solicitar Cotización</span>
+              <svg id="submitBtnIcon" class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </button>
           </form>
 
-          <!-- Mensaje de Éxito Oculto -->
-          <div id="serviceSuccess" class="hidden py-6 text-center space-y-3">
+          <!-- Mensaje de Éxito Oculto (Solo tras respuesta 200 OK del backend) -->
+          <div id="serviceSuccess" role="status" aria-live="polite" class="hidden py-6 text-center space-y-4">
             <div class="w-12 h-12 rounded-full bg-brand-green/20 border-2 border-brand-green flex items-center justify-center mx-auto text-brand-green">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
             </div>
-            <h3 class="text-base font-bold text-white">¡Requerimiento Enviado!</h3>
-            <p class="text-xs text-brand-textSteel" id="successDetail">
-              Un ingeniero de planta se comunicará contigo al teléfono suministrado.
-            </p>
-            <a id="serviceWaLink" href="#" target="_blank" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-brand-btnGreen hover:bg-brand-btnGreenHover text-xs font-bold text-white transition-all">
-              <span>Escribir por WhatsApp ahora</span>
-              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
-            </a>
+            <div>
+              <h3 class="text-base font-bold text-white mb-1">¡Solicitud Enviada con Éxito!</h3>
+              <p class="text-xs text-brand-textSteel leading-relaxed">
+                Hemos recibido tu requerimiento técnico para <strong id="successServiceName" class="text-white"></strong>. Un ingeniero de planta te contactará en menos de 24 horas hábiles.
+              </p>
+            </div>
+            <div class="pt-2 space-y-2">
+              <a id="serviceWaLink" href="#" target="_blank" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-brand-btnGreen hover:bg-brand-btnGreenHover text-xs font-bold text-white transition-all shadow-md">
+                <span>Continuar por WhatsApp con estos datos</span>
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+              </a>
+              <button type="button" onclick="resetServiceFormView()" class="block w-full text-center text-xs text-brand-textMuted hover:text-white underline pt-1">
+                Enviar otra cotización
+              </button>
+            </div>
           </div>
 
           <!-- Enlace Alternativo de WhatsApp Directo -->
@@ -543,8 +583,7 @@
       document.getElementById('directWaButton').href = 'https://wa.me/573104646032?text=' + data.waContext;
 
       // Reset form view
-      document.getElementById('serviceForm').classList.remove('hidden');
-      document.getElementById('serviceSuccess').classList.add('hidden');
+      resetServiceFormView();
 
       // Update URL hash without scroll jump
       history.replaceState(null, null, '?s=' + key);
@@ -559,19 +598,158 @@
       }
     });
 
-    function handleServiceSubmit() {
-      const name = document.getElementById('fullName').value;
-      const phone = document.getElementById('phone').value;
-      const email = document.getElementById('email').value;
-      const msg = document.getElementById('message').value;
-      const serviceName = servicesData[currentKey].title;
+    // Configuración del servicio de formularios (Web3Forms)
+    // Conectado para recibir cotizaciones en dilanmh066@gmail.com
+    const WEB3FORMS_ACCESS_KEY = '07d5384e-6769-4cd1-95c2-37acc9002c80';
 
-      // Prepare contextual WhatsApp link
-      const waText = encodeURIComponent('Hola Taller Industrial Alkan. Solicito cotización para ' + serviceName + '.\nNombre: ' + name + '\nTeléfono: ' + phone + '\nEmail: ' + email + '\nMensaje: ' + msg);
-      document.getElementById('serviceWaLink').href = 'https://wa.me/573104646032?text=' + waText;
+    function showError(msg) {
+      const errorBox = document.getElementById('serviceError');
+      const errorMsg = document.getElementById('errorMessage');
+      if (errorBox && errorMsg) {
+        errorMsg.innerText = msg;
+        errorBox.classList.remove('hidden');
+      }
+    }
 
-      document.getElementById('serviceForm').classList.add('hidden');
-      document.getElementById('serviceSuccess').classList.remove('hidden');
+    function resetServiceFormView() {
+      const form = document.getElementById('serviceForm');
+      const success = document.getElementById('serviceSuccess');
+      const errorBox = document.getElementById('serviceError');
+      if (form) form.classList.remove('hidden');
+      if (success) success.classList.add('hidden');
+      if (errorBox) errorBox.classList.add('hidden');
+    }
+
+    async function handleServiceSubmit() {
+      const name = document.getElementById('fullName').value.trim();
+      const company = document.getElementById('company').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      const botcheck = document.getElementById('botcheck') ? document.getElementById('botcheck').checked : false;
+      const consent = document.getElementById('consent') ? document.getElementById('consent').checked : false;
+
+      const submitBtn = document.getElementById('submitBtn');
+      const submitBtnText = document.getElementById('submitBtnText');
+      const submitSpinner = document.getElementById('submitSpinner');
+      const submitBtnIcon = document.getElementById('submitBtnIcon');
+      const errorBox = document.getElementById('serviceError');
+      const errWaLink = document.getElementById('errorWaLink');
+
+      // Limpiar estados de error previos
+      if (errorBox) errorBox.classList.add('hidden');
+      if (errWaLink) errWaLink.classList.add('hidden');
+
+      // 1. Trampa anti-spam honeypot (si un bot lo marca, abortar silenciosamente)
+      if (botcheck) return;
+
+      // 2. Validación de campos obligatorios
+      if (!name || !company || !phone || !email || !msg) {
+        showError('Por favor diligencia todos los campos obligatorios marcados con asterisco (*).');
+        return;
+      }
+
+      // 3. Validación de correo electrónico
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        showError('Por favor ingresa un correo electrónico válido (ejemplo: compras@empresa.com).');
+        return;
+      }
+
+      // 4. Validación de teléfono colombiano (mínimo 10 dígitos)
+      const cleanPhone = phone.replace(/\D/g, '');
+      if (cleanPhone.length < 10) {
+        showError('Por favor ingresa un número de teléfono o celular válido de al menos 10 dígitos.');
+        return;
+      }
+
+      // 5. Validación de autorización de datos personales (Ley 1581)
+      if (!consent) {
+        showError('Debes autorizar el tratamiento de datos personales conforme a la Ley 1581 para continuar.');
+        return;
+      }
+
+      const serviceName = (servicesData[currentKey] && servicesData[currentKey].title) 
+        ? servicesData[currentKey].title 
+        : 'Cotización Técnica';
+      const formattedDate = new Date().toLocaleString('es-CO', { timeZone: 'America/Bogota' });
+
+      // Mensaje estructurado para WhatsApp de contingencia / segunda vía
+      const waMessage = 'Hola Taller Industrial Alkan S.A.S., solicito cotización:\n\n' +
+        '• Servicio: ' + serviceName + '\n' +
+        '• Contacto: ' + name + '\n' +
+        '• Empresa: ' + company + '\n' +
+        '• Celular: ' + phone + '\n' +
+        '• Correo: ' + email + '\n' +
+        '• Requerimiento: ' + msg;
+      const waUrl = 'https://wa.me/573104646032?text=' + encodeURIComponent(waMessage);
+
+      // Verificación de clave pública configurada
+      if (WEB3FORMS_ACCESS_KEY === 'TU_ACCESS_KEY_AQUI') {
+        showError('Aviso técnico: Ingresa tu clave pública gratuita de Web3Forms en el código para activar el envío por correo. Mientras tanto, puedes enviar tu requerimiento por WhatsApp:');
+        if (errWaLink) {
+          errWaLink.href = waUrl;
+          errWaLink.classList.remove('hidden');
+        }
+        return;
+      }
+
+      // Estado de carga UI
+      if (submitBtn) submitBtn.disabled = true;
+      if (submitBtnText) submitBtnText.innerText = 'Enviando requerimiento...';
+      if (submitSpinner) submitSpinner.classList.remove('hidden');
+      if (submitBtnIcon) submitBtnIcon.classList.add('hidden');
+
+      try {
+        const payload = {
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: 'Nueva cotización: ' + serviceName + ' — ' + company,
+          from_name: 'Portal Web Alkan S.A.S.',
+          replyto: email,
+          service: serviceName,
+          name: name,
+          company: company,
+          phone: phone,
+          email: email,
+          message: msg,
+          fecha: formattedDate,
+          botcheck: ''
+        };
+
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json' 
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+          // Éxito: Ocultar formulario, mostrar pantalla de confirmación
+          document.getElementById('serviceForm').classList.add('hidden');
+          document.getElementById('serviceSuccess').classList.remove('hidden');
+          document.getElementById('successServiceName').innerText = serviceName;
+          document.getElementById('serviceWaLink').href = waUrl;
+          document.getElementById('serviceForm').reset();
+        } else {
+          throw new Error(result.message || 'Error en la respuesta del servidor');
+        }
+      } catch (err) {
+        showError('No fue posible conectar con el servicio de correo en este momento. Puedes enviar estos mismos datos técnicos por WhatsApp con un solo clic:');
+        if (errWaLink) {
+          errWaLink.href = waUrl;
+          errWaLink.classList.remove('hidden');
+        }
+      } finally {
+        // Restaurar estado del botón
+        if (submitBtn) submitBtn.disabled = false;
+        if (submitBtnText) submitBtnText.innerText = 'Solicitar Cotización';
+        if (submitSpinner) submitSpinner.classList.add('hidden');
+        if (submitBtnIcon) submitBtnIcon.classList.remove('hidden');
+      }
     }
 
     const mobileBtn = document.getElementById('mobileMenuBtn');
