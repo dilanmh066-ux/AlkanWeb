@@ -31,7 +31,7 @@
 ---
 
 ## 4. Estructura de Navegación Oficial (Según DER 2.1)
-- **Top Strip**: Planta Buga (Cra 24 N° 13-04 Barrio Palo Blanco) | Correo institucional | Teléfonos: 315 663 7983 · 312 724 6772 · 310 464 6032.
+- **Top Strip**: Planta Buga (Cra 24 N° 13-04 Barrio Palo Blanco) | Correo institucional | Teléfonos: 317 859 7112 · 314 508 0630 · 310 464 6032.
 - **Menú**:
   1. `Inicio`
   2. `Nosotros` (Institucional, Misión, Visión, Historia 1974-Presente, Valores)
