@@ -6,6 +6,14 @@
   <title>Líneas de Servicio y Fabricación | Taller Industrial Alkan S.A.S.</title>
   <meta name="description" content="Servicios de mecanizado en torno convencional, fresado, corte plasma CNC, rolado de lámina, soldadura especializada y mantenimiento mecánico industrial en Buga, Valle del Cauca.">
   
+  <!-- Favicon e Identidad Corporativa -->
+  <link rel="icon" type="image/png" href="RecursosVisuales/logo_alkan_exact_0b111a.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Líneas de Servicio y Fabricación | Taller Industrial Alkan S.A.S.">
+  <meta property="og:description" content="Servicios de mecanizado en torno convencional, fresado, corte plasma CNC, rolado de lámina, soldadura especializada y mantenimiento mecánico industrial en Buga, Valle del Cauca.">
+  <meta property="og:image" content="RecursosVisuales/logo_alkan_exact_0b111a.png">
+  <meta name="theme-color" content="#0B111A">
+  
   <!-- Fonts: Inter & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -256,20 +264,27 @@
         <div class="border-t border-brand-border/70 pt-6">
           <span class="text-xs text-brand-textMuted uppercase font-bold tracking-wider block mb-3">Otras líneas de fabricación:</span>
           <div class="flex flex-wrap gap-2 text-xs">
-            <button onclick="switchService('torno')" class="px-3 py-1.5 rounded bg-brand-surface border border-brand-border hover:border-brand-green text-brand-textMuted hover:text-white transition-colors">Torno</button>
-            <button onclick="switchService('fresado')" class="px-3 py-1.5 rounded bg-brand-surface border border-brand-border hover:border-brand-green text-brand-textMuted hover:text-white transition-colors">Fresado</button>
-            <button onclick="switchService('plasma')" class="px-3 py-1.5 rounded bg-brand-surface border border-brand-border hover:border-brand-green text-brand-textMuted hover:text-white transition-colors">Plasma CNC</button>
-            <button onclick="switchService('rolado')" class="px-3 py-1.5 rounded bg-brand-surface border border-brand-border hover:border-brand-green text-brand-textMuted hover:text-white transition-colors">Rolado</button>
-            <button onclick="switchService('soldadura')" class="px-3 py-1.5 rounded bg-brand-surface border border-brand-border hover:border-brand-green text-brand-textMuted hover:text-white transition-colors">Soldadura</button>
-            <button onclick="switchService('mantenimiento')" class="px-3 py-1.5 rounded bg-brand-surface border border-brand-border hover:border-brand-green text-brand-textMuted hover:text-white transition-colors">Mantenimiento</button>
+            <button data-service-btn="torno" onclick="switchService('torno')" class="px-3 py-1.5 rounded bg-brand-card border border-brand-green text-white font-semibold transition-colors">Torno</button>
+            <button data-service-btn="fresado" onclick="switchService('fresado')" class="px-3 py-1.5 rounded bg-brand-surface border border-brand-border hover:border-brand-green text-brand-textMuted hover:text-white transition-colors">Fresado</button>
+            <button data-service-btn="plasma" onclick="switchService('plasma')" class="px-3 py-1.5 rounded bg-brand-surface border border-brand-border hover:border-brand-green text-brand-textMuted hover:text-white transition-colors">Plasma CNC</button>
+            <button data-service-btn="rolado" onclick="switchService('rolado')" class="px-3 py-1.5 rounded bg-brand-surface border border-brand-border hover:border-brand-green text-brand-textMuted hover:text-white transition-colors">Rolado</button>
+            <button data-service-btn="soldadura" onclick="switchService('soldadura')" class="px-3 py-1.5 rounded bg-brand-surface border border-brand-border hover:border-brand-green text-brand-textMuted hover:text-white transition-colors">Soldadura</button>
+            <button data-service-btn="mantenimiento" onclick="switchService('mantenimiento')" class="px-3 py-1.5 rounded bg-brand-surface border border-brand-border hover:border-brand-green text-brand-textMuted hover:text-white transition-colors">Mantenimiento</button>
           </div>
+        </div>
+
+        <!-- Botón Móvil: Desplazamiento directo al cotizador -->
+        <div class="lg:hidden pt-2">
+          <a href="#cotizador" class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-brand-btnGreen hover:bg-brand-btnGreenHover active:scale-[0.99] text-xs font-bold uppercase tracking-wider text-white transition-all shadow-md">
+            <span>Diligenciar Cotización de este Servicio ↓</span>
+          </a>
         </div>
       </article>
 
       <!-- ===================================================== -->
       <!-- COLUMNA DERECHA: FORMULARIO CONTEXTUAL TIPO MAHER    -->
       <!-- ===================================================== -->
-      <aside class="lg:col-span-5 lg:sticky lg:top-28">
+      <aside id="cotizador" class="lg:col-span-5 lg:sticky lg:top-28">
         <div class="bg-brand-surface rounded-xl border border-brand-border p-6 sm:p-8 shadow-xl">
           
           <!-- Encabezado Maher-Style -->
@@ -584,6 +599,15 @@
 
       // Reset form view
       resetServiceFormView();
+
+      // Highlight active service button
+      document.querySelectorAll('[data-service-btn]').forEach(btn => {
+        if (btn.getAttribute('data-service-btn') === key) {
+          btn.className = 'px-3 py-1.5 rounded bg-brand-card border border-brand-green text-white font-semibold transition-colors';
+        } else {
+          btn.className = 'px-3 py-1.5 rounded bg-brand-surface border border-brand-border hover:border-brand-green text-brand-textMuted hover:text-white transition-colors';
+        }
+      });
 
       // Update URL hash without scroll jump
       history.replaceState(null, null, '?s=' + key);
