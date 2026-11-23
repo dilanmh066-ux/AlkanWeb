@@ -703,16 +703,17 @@
       try {
         const payload = {
           access_key: WEB3FORMS_ACCESS_KEY,
-          subject: 'Nueva cotización: ' + serviceName + ' — ' + company,
-          from_name: 'Portal Web Alkan S.A.S.',
+          subject: name + ' (' + company + ') ha solicitado una cotización para ' + serviceName,
+          from_name: 'Cotizaciones Taller Alkan S.A.S.',
           replyto: email,
-          service: serviceName,
-          name: name,
-          company: company,
-          phone: phone,
-          email: email,
-          message: msg,
-          fecha: formattedDate,
+          'Notificación': name + ' ha solicitado una cotización técnica desde el portal web.',
+          'Servicio Requerido': serviceName,
+          'Nombre del Contacto': name,
+          'Empresa o Razón Social': company,
+          'Teléfono / Celular': phone,
+          'Correo Electrónico': email,
+          'Requerimiento Técnico': msg,
+          'Fecha de Solicitud': formattedDate,
           botcheck: ''
         };
 
