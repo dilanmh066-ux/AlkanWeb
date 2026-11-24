@@ -8,10 +8,10 @@ Proyecto desarrollado en el marco de la **Etapa Productiva del SENA** (Tecnolog�
 
 ## 📌 Información General del Proyecto
 
-- **Razón Social:** Taller Industrial Alkan S.A.S. (NIT: 900.865.214-1)
+- **Razón Social:** Taller Industrial Alkan S.A.S. (NIT: 900.882.264-6)
 - **Sector:** Metalmecánica pesada, mecanizado de precisión, soldadura calificada y servicios técnicos en sitio para los sectores industrial y agroindustrial.
 - **Ubicación de Planta:** Cra 24 N° 13-04, Barrio Palo Blanco, Guadalajara de Buga, Valle del Cauca.
-- **Contacto Corporativo:** 317 859 7112 · 314 508 0630 · 310 464 6032 | Correo: `alcam_uno@yahoo.com`
+- **Contacto Corporativo:** 312 724 6772 · 317 859 7112 · 314 508 0630 · 310 464 6032 | Correo: `alcam_uno@yahoo.com`
 - **Desarrollador / Aprendiz SENA:** Dilan Hernández
 - **Supervisión Empresarial:** Paola Villada (Jefe de Etapa Productiva) / Gerardo García (Representante Legal)
 - **Fecha de Inicio:** 19 de noviembre de 2026
