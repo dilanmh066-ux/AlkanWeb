@@ -24,17 +24,17 @@
         "Nuestros procesos aseguran el módulo exacto, ángulo de presión y ajuste de engrane requerido para sustitución inmediata en paradas de planta."
       ],
       "formLabel": "¿Necesitas Cotizar Fresado y Engranajes?",
-      "waContext": "Hola, solicito cotización para Fresado y Engranajes"
+      "waContext": "Hola, solicito cotización para Fresado y Tallado de Engranajes"
     },
     {
       "id": "plasma",
-      "category": "Corte y Conformado CNC",
-      "title": "Corte Plasma CNC de Alta Definición",
+      "category": "Corte CNC de Alta Definición",
+      "title": "Corte de Lámina por Plasma CNC",
       "badge": "Corte Computarizado",
       "description": [
-        "Contamos con mesa de corte plasma CNC industrial con capacidad para procesar láminas y placas de acero al carbono e inoxidable desde calibres delgados hasta espesores de 1 pulgada (25.4 mm).",
-        "Área útil de corte de 1.500 x 3.000 mm, cortes limpios de alta repetibilidad dimensional y mínima zona afectada por el calor (ZAC), listos para ensamble directo o biselado de soldadura.",
-        "Corte de bridas según normas ANSI/ASME, cartelas estructurales, discos perforados, placas base para columnas y piezas con geometrías complejas a partir de archivos CAD (DXF, DWG) o muestra física."
+        "Mesa de corte por plasma CNC de alta definición con control automático de altura de antorcha (THC). Permite el corte limpio y veloz de placas metálicas con geometrías complejas directamente desde archivos CAD.",
+        "Cortamos láminas y placas desde calibre 18 hasta 1 pulgada (25.4 mm) en acero al carbono, estructural e inoxidable, optimizando el aprovechamiento de material en bridas, cartelas, discos y piezas para tolvas.",
+        "El proceso entrega bordes perpendiculares, mínima escoria y excelente repetibilidad dimensional para ensamble directo en obra o soldadura."
       ],
       "formLabel": "¿Necesitas Cotizar Corte Plasma CNC?",
       "waContext": "Hola, solicito cotización para Corte Plasma CNC"
@@ -46,38 +46,38 @@
       "badge": "Calderería Pesada",
       "description": [
         "Roladora de lámina de tres rodillos piramidales con capacidad de conformado mecánico para curvar planchas metálicas en cilindros uniformes, conos concéntricos y virolas de ensamble.",
-        "Capacidad de rolado en frío para espesores de hasta 1/2 pulgada (12.7 mm) y ancho útil de conformado de hasta 2.000 mm en aceros estructurales A36 e inoxidables.",
-        "Indispensable para la fabricación de tanques de almacenamiento, ductos de transporte neumático, chimeneas y carcasas cilíndricas para la industria azucarera y papelera."
+        "Indispensable para la fabricación de virolas para tanques, conos de tolvas, camisas cilíndricas, ductos de transporte neumático y chimeneas industriales con espesores de hasta 1/2 pulgada (12.7 mm).",
+        "Aseguramos curvatura homogénea en toda la longitud de la lámina, pre-curvado de bordes y preparación de biseles para soldadura de alta resistencia."
       ],
       "formLabel": "¿Necesitas Cotizar Rolado de Lámina?",
       "waContext": "Hola, solicito cotización para Rolado de Lámina"
     },
     {
       "id": "soldadura",
-      "category": "Unión y Recuperación",
-      "title": "Soldadura Especializada y Revestimientos",
-      "badge": "Homologación AWS",
+      "category": "Unión y Revestimiento Técnico",
+      "title": "Soldadura Especializada y Revestimientos Duros",
+      "badge": "Código AWS D1.1",
       "description": [
-        "Aplicación de procesos de soldadura SMAW (electrodo revestido), GMAW/MIG (microalambre) y GTAW/TIG (gas argón) ejecutados por soldadores calificados bajo estándares del código AWS D1.1.",
-        "Especialistas en recuperación y recargue duro antidesgaste en piezas sometidas a abrasión severa e impacto (dientes de cargador, cuchillas, martillos trituradores y tornillos sinfín transportadores).",
-        "Soldadura en aceros disímiles, fundiciones de hierro, bronces, aceros inoxidables austeníticos y aleaciones especiales con control térmico de precalentamiento y poscalentamiento."
+        "Aplicación de procedimientos de soldadura especializada en procesos SMAW (electrodo revestido), GMAW (MIG/MAG) y GTAW (TIG) para aceros aleados, inoxidables y fundición.",
+        "Somos especialistas en aplicación de recubrimientos duros antidesgaste (hardfacing) con aleaciones de carburo de cromo en cuchillas picadoras de caña, martillos de molienda, alabes de ventilador y roscas sinfín.",
+        "Protegemos componentes sometidos a fricción severa e impacto abrasivo continuo, prolongando la vida útil de los equipos en molienda y transporte."
       ],
       "formLabel": "¿Necesitas Cotizar Soldadura Especializada?",
       "waContext": "Hola, solicito cotización para Soldadura Especializada"
     },
     {
       "id": "mantenimiento",
-      "category": "Servicios en Sitio y SST",
-      "title": "Mantenimiento Industrial y Montaje en Planta",
+      "category": "Servicios en Planta & Paradas",
+      "title": "Mantenimiento Mecánico y Personal Calificado SST en Sitio",
       "badge": "SST Resolución 4272",
       "description": [
-        "Personal calificado para el servicio interdisciplinario (mecánicos de banco, soldadores y montadores) con disponibilidad para atención de paradas de planta programadas y emergencias mecánicas las 24 horas.",
-        "Personal 100% certificado en trabajo seguro en alturas (Resolución 4272/2021), espacios confinados, protocolos de consignación y bloqueo LOTO y afiliación estricta a ARL.",
-        "Montaje y alineación de reductores, motores, poleas y chumaceras, cambio de bandas transportadoras, instalación de tubería de proceso y adecuaciones estructurales en planta cliente.",
-        "Como valor agregado dentro del servicio, se integran asesorías industriales en planta y diseño industrial para la optimización, adaptación técnica y levantamiento de componentes mecánicos sin costo adicional."
+        "Disponemos de personal calificado para el servicio: mecánicos de banco, soldadores y montadores con certificación vigente en trabajo seguro en alturas (Resolución 4272/2021) y espacios confinados.",
+        "Acompañamos a su empresa durante paradas de planta programadas o emergencias operativas, realizando montaje de tubería, sustitución de rodamientos, alineación de transmisiones y mantenimiento de maquinaria pesada.",
+        "Como valor agregado dentro de este servicio, brindamos asesorías industriales en planta y diseño industrial para la optimización, adaptación técnica y levantamiento de planos de componentes mecánicos sin costo adicional.",
+        "Garantizamos disponibilidad inmediata en Buga y desplazamiento a plantas de los sectores industrial y agroindustrial en todo el Valle del Cauca."
       ],
-      "formLabel": "¿Necesitas Cotizar Mantenimiento y Montajes?",
-      "waContext": "Hola, solicito cotización para Mantenimiento y Montajes"
+      "formLabel": "¿Necesitas Personal Calificado para Parada de Planta?",
+      "waContext": "Hola, solicito Personal Calificado para Mantenimiento y Montajes en Planta"
     }
   ]
 }
