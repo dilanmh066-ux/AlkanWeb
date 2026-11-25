@@ -650,7 +650,7 @@
 
   <script>
     // Lógica del Widget Flotante de WhatsApp con Popover de Asesores
-    window.toggleWaMenu = function(e) {
+    window.openWaMenu = function(e) {
       if (e) {
         e.preventDefault();
         e.stopPropagation();
@@ -661,18 +661,15 @@
       const iconClose = document.getElementById('waIconClose');
       if (!menu) return;
 
-      const isHidden = menu.classList.contains('hidden');
-      if (isHidden) {
-        menu.classList.remove('hidden');
-        if (btn) btn.setAttribute('aria-expanded', 'true');
-        if (iconChat) iconChat.classList.add('hidden');
-        if (iconClose) iconClose.classList.remove('hidden');
-      } else {
-        menu.classList.add('hidden');
-        if (btn) btn.setAttribute('aria-expanded', 'false');
-        if (iconChat) iconChat.classList.remove('hidden');
-        if (iconClose) iconClose.classList.add('hidden');
-      }
+      menu.classList.remove('hidden');
+      if (btn) btn.setAttribute('aria-expanded', 'true');
+      if (iconChat) iconChat.classList.add('hidden');
+      if (iconClose) iconClose.classList.remove('hidden');
+
+      menu.classList.add('ring-2', 'ring-brand-green');
+      setTimeout(() => {
+        menu.classList.remove('ring-2', 'ring-brand-green');
+      }, 1000);
     };
 
     window.closeWaMenu = function(e) {
@@ -688,6 +685,20 @@
         if (btn) btn.setAttribute('aria-expanded', 'false');
         if (iconChat) iconChat.classList.remove('hidden');
         if (iconClose) iconClose.classList.add('hidden');
+      }
+    };
+
+    window.toggleWaMenu = function(e) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      const menu = document.getElementById('waFloatingMenu');
+      if (!menu) return;
+      if (menu.classList.contains('hidden')) {
+        window.openWaMenu(e);
+      } else {
+        window.closeWaMenu(e);
       }
     };
 
