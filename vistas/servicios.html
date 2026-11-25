@@ -691,9 +691,10 @@
       }
     });
 
-    // Configuración del servicio de formularios (Web3Forms)
-    // Conectado para recibir cotizaciones en dilanmh066@gmail.com
+    // Configuración del servicio de formularios (Web3Forms y Google Sheets)
+    // Conectado para recibir cotizaciones en dilanmh066@gmail.com y en Google Sheets
     const WEB3FORMS_ACCESS_KEY = '07d5384e-6769-4cd1-95c2-37acc9002c80';
+    const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxyxkqoCSFl-vBAT7LIT3VCmExLQRYczeAsmSRPnjzevmbvJdnGTSeGm2pgNYN6aoR6hA/exec';
 
     function showError(msg) {
       const errorBox = document.getElementById('serviceError');
@@ -809,6 +810,26 @@
           'Fecha de Solicitud': formattedDate,
           botcheck: ''
         };
+
+        // Registro automático en Google Sheets (en paralelo)
+        const sheetsPayload = {
+          name: name,
+          company: company,
+          phone: phone,
+          email: email,
+          service: serviceName,
+          message: msg,
+          date: formattedDate
+        };
+
+        fetch(GOOGLE_SHEETS_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'text/plain;charset=utf-8'
+          },
+          body: JSON.stringify(sheetsPayload)
+        }).catch(err => console.warn('Aviso: Registro secundario en Google Sheets:', err));
 
         const response = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
